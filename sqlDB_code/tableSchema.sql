@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS teams;
 
 CREATE TABLE teams (
-	team_id VARCHAR(4) NOT NULL PRIMARY KEY,
+	team_id SMALLSERIAL,
 	team_name VARCHAR,
     y1999 INT,
     y2000 INT,
@@ -23,7 +23,11 @@ CREATE TABLE teams (
     y2016 INT,
     y2017 INT,
     y2018 INT,
-    y2019 INT,
+    y2019 INT
 );
+
+COPY teams(team_name,y2019,y2018,y2017,y2016,y2015,y2014,y2013,y2012,y2011,y2010,y2009,y2008,y2007,
+		  y2006,y2005,y2004,y2003,y2002,y2001) 
+FROM 'C:\Users\Owner\BootCampData\Project2_Code\Output\teamAttendancePerYr.csv' DELIMITER ',' CSV HEADER;
 
 SELECT * FROM teams;

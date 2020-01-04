@@ -1,0 +1,158 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>NBA Attendance Visualizations</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="text-center">
+                    NBA ATTENDANCE ANALYSIS
+                </h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./map.html">Attendance Map</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                        <th style="text-align:center">NBA Teams</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                        <td style="text-align:center"><button class="team" type="button" formtarget="_self">76ers</button></td>
+                        </tr>
+                        <tr>
+                        <td style="text-align:center"><button class="team" type="button" formtarget=_self>Mavericks</button></td>
+                        </tr>
+                        <tr>
+                        <td style="text-align:center"><button class="team" type="button" formtarget=_self>Raptors</button></td>
+                        </tr>
+                        <tr>
+                        <td style="text-align:center"><button class="team" type="button" formtarget=_self>Trailblazers</button></td>
+                        </tr>
+                        <tr>
+                        <td style="text-align:center"><button class="team" type="button" formtarget=_self>Heat</button></td>
+                        </tr>
+                        <tr>
+                        <td style="text-align:center"><button class="team" type="button" formtarget=_self>Clippers</button></td>
+                        </tr>
+                        <tr>
+                        <td style="text-align:center"><button class="team" type="button" formtarget=_self>Lakers</button></td>
+                        </tr>
+                        <tr>
+                        <td style="text-align:center"><button class="team" type="button" formtarget=_self>Celtics</button></td>
+                        </tr>
+                        <tr>
+                        <td style="text-align:center"><button class="team" type="button" formtarget=_self>NY Knicks</button></td>
+                        </tr>
+                        <tr>
+                        <td style="text-align:center"><button class="team" type="button" formtarget=_self>Nuggets</button></td>
+                        </tr>
+                        <tr>
+                        <td style="text-align:center"><button class="team" type="button" formtarget=_self>Bulls</button></td>
+                        </tr>
+                        <tr>
+                        <td style="text-align:center"><button class="team" type="button" formtarget=_self>Spurs</button></td>
+                        </tr>
+                        <tr>
+                        <td style="text-align:center"><button class="team" type="button" formtarget=_self>Jazz</button></td>
+                        </tr>
+                        <tr>
+                        <td style="text-align:center"><button class="team" type="button" formtarget=_self>Thunder</button></td>
+                        </tr>
+                        <tr>
+                        <td style="text-align:center"><button class="team" type="button" formtarget=_self>Cavaliers</button></td>
+                        </tr>
+                        <tr>
+                        <td style="text-align:center"><button class="team" type="button" formtarget=_self>Warriors</button></td>
+                        </tr>
+                        <tr>
+                        <td style="text-align:center"><button class="team" type="button" formtarget=_self>Rockets</button></td>
+                        </tr>
+                        <tr>
+                        <td style="text-align:center"><button class="team" type="button" formtarget=_self>Bucks</button></td>
+                        </tr>
+                        <tr>
+                        <td style="text-align:center"><button class="team" type="button" formtarget=_self>Kings</button></td>
+                        </tr>
+                        <tr>
+                        <td style="text-align:center"><button class="team" type="button" formtarget=_self>Magic</button></td>
+                        </tr>
+                        <tr>
+                        <td style="text-align:center"><button class="team" type="button" formtarget=_self>Nets</button></td>
+                        </tr>
+                        <tr>
+                        <td style="text-align:center"><button class="team" type="button" formtarget=_self>Pacers</button></td>
+                        </tr>
+                        <tr>
+                        <td style="text-align:center"><button class="team" type="button" formtarget=_self>Pelicans</button></td>
+                        </tr>
+                        <tr>
+                        <td style="text-align:center"><button class="team" type="button" formtarget=_self>Hawks</button></td>
+                        </tr>
+                        <tr>
+                        <td style="text-align:center"><button class="team" type="button" formtarget=_self>Pistons</button></td>
+                        </tr>
+                        <tr>
+                        <td style="text-align:center"><button class="team" type="button" formtarget=_self>Suns</button></td>
+                        </tr>
+                        <tr>
+                        <td style="text-align:center"><button class="team" type="button" formtarget=_self>Wizards</button></td>
+                        </tr>
+                        <tr>
+                        <td style="text-align:center"><button class="team" type="button" formtarget=_self>Grizzlies</button></td>
+                        </tr>
+                        <tr>
+                        <td style="text-align:center"><button class="team" type="button" formtarget=_self>Hornets</button></td>
+                        </tr>
+                        <tr>
+                        <td style="text-align:center"><button class="team" type="button" formtarget=_self>Timberwolves</button></td>
+                        </tr>
+                        </tbody>
+                        </table>                      
+            </div>
+            <div class="col-md-9">
+                <script>
+                    $('.team').on('click', function(){
+                        console.log('name of button', $(this).text())
+                        $.ajax({
+                            url: 'http://localhost:5000/grabTeam/' + $(this).text()
+                        }).then(function(data){
+                            console.log('this is our data', data)
+                            var data = [
+                        {
+                            x: [2019,2018,2017,2016,2015,2014,2013,2012,2011,2010,2009,2008,2007,2006,2005,2004,2003,2002,2001],
+                            y: [data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9], data[10], data[11], data[12], data[13], data[14], data[15], data[16], data[17], data[18], data[19], data[20]],
+                            type: 'bar'
+                        }
+                    ];
+                    Plotly.newPlot('myDiv', data);
+                        })
+                    })
+                </script>
+            </div>
+        </div>
+    </div>
+</body>
